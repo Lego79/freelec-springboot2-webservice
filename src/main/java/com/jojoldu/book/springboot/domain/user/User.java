@@ -1,6 +1,7 @@
 package com.jojoldu.book.springboot.domain.user;
 
 import com.jojoldu.book.springboot.domain.BaseTimeEntity;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -29,7 +30,7 @@ public class User extends BaseTimeEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private Role role;
-
+    @Builder
     public User(String name, String email, String picture, Role role) {
         this.name = name;
         this.email = email;
@@ -37,12 +38,11 @@ public class User extends BaseTimeEntity {
         this.role = role;
     }
 
-    public update(String name, String picture) {
+    public User update(String name, String picture) {
         this.name = name;
         this.picture = picture;
 
         return this;
-
     }
 
     public String getRoleKey() {
