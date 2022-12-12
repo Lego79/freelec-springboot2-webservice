@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @MappedSuperclass // 상위 클래스가됨
-@EntityListeners(AuditingEntityListener.class) //auditing 기능 포함
+@EntityListeners(AuditingEntityListener.class) //auditing 기능을 포함함
 public abstract class BaseTimeEntity {
 
 
